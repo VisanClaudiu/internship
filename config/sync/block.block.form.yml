@@ -1,0 +1,20 @@
+uuid: 49dfb575-2b19-4098-80e1-2d07fd632e12
+langcode: en
+status: true
+dependencies:
+  module:
+    - internship_hello
+  theme:
+    - olivero
+id: form
+theme: olivero
+region: content
+weight: -6
+provider: null
+plugin: form_block
+settings:
+  id: form_block
+  label: Form
+  label_display: visible
+  provider: internship_hello
+visibility: {  }

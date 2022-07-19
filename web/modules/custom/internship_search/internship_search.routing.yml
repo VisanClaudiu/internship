@@ -1,0 +1,8 @@
+internship_search.example:
+  path: '/internship-search'
+  defaults:
+    _title: 'Example'
+    _form: '\Drupal\internship_search\Form\InternshipSearchForm'
+  requirements:
+    _permission: 'access content'
+
