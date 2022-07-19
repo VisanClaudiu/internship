@@ -1,6 +1,6 @@
 <?php
 
-    function user_schema(){
+    function people_schema(){
         $schema['people'] = [
             'fields' => [
                 'id' => [
