@@ -72,7 +72,6 @@ class HelloForm extends FormBase {
     return $form;
   }
 
-
   public function validateForm(array &$form, FormStateInterface $form_state){
     $email = $form_state->getValue('email');
     $phone = $form_state->getValue('phone');
@@ -91,6 +90,8 @@ class HelloForm extends FormBase {
 
     $query=\Drupal::database();
     $query->insert('people')->fields($postData)->execute();
+    $query -> update('people');
+    
     $path = '/succes';
     $url = Url::fromUserInput($path);
     $form_state->setRedirectUrl($url);

@@ -3,11 +3,8 @@
 function internship_hello_theme($existing, $type, $theme, $path) {
   return [
     'form_block' => [
-      'variables' => ['name' => NULL,
-                      'surname'=>NULL,
-                      'email'=>NULL,
-                      'phone'=>NULL,
-                      'gender'=>NULL],
+      'variables' => [ 'data'=>NULL
+                     ],
               ]
     ];
 }
