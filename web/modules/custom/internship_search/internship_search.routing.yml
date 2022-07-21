@@ -1,5 +1,5 @@
 internship_search.example:
-  path: '/internship-search'
+  path: '/search'
   defaults:
     _title: 'Example'
     _form: '\Drupal\internship_search\Form\InternshipSearchForm'
