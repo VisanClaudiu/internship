@@ -29,42 +29,27 @@ class InternshipSearchForm extends FormBase {
    * Builds the response.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form_state->setMethod('GET');
-
     $form['keyword'] = [
       '#type' => 'search',
       '#placeholder' => t('Search...'),
-      '#required' => TRUE,
     ];
 
-    $form['actions'] = [
-      '#type' => 'actions',
-    ];
-
-    $form['actions']['submit'] = [
-      '#type' => 'hidden',
+    $form['submit'] = [
+      '#type' => 'submit',
       '#value' => $this->t('Search'),
       '#name' => '',
     ];
 
-    $form['#after_build'][] = [get_class($this), 'afterBuild'];
     return $form;
   }
 
-  public static function afterBuild(array $form, FormStateInterface $form_state) {
-    unset($form['form_token']);
-    unset($form['form_build_id']);
-    unset($form['form_id']);
-    return $form;
-  }
 
   public function validateForm(array &$form, FormStateInterface $form_state){
   }
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $path = "/search?keyword={$form['keyword']}";
-    $url = Url::fromUserInput($path);
-    $form_state->setRedirectUrl($url);
+    $keyword = $form_state->getValue('keyword');
+    $form_state->setRedirect('view.search.search', [], ['query' => ['keyword' => $keyword]]);
   }
 
 }

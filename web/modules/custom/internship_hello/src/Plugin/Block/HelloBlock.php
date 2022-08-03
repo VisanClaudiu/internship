@@ -20,8 +20,10 @@ class HelloBlock extends BlockBase {
 
   public function build() {
     $query=\Drupal::database();
-    $result = $query -> select('people','p') -> fields('p',['name','surname','email','phone','gender'])->execute()
-                    ->fetchAll();
+    $result = $query -> select('people','p')
+     -> fields('p',['name','surname','email','phone','gender'])
+     ->execute()              
+     ->fetchAll();
    
     $data = [];
     foreach($result as $row){

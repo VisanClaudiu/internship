@@ -1,0 +1,34 @@
+uuid: aa2c23d1-cda0-4c77-86fc-2d2edfdcac96
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.mycontent.body
+    - field.field.node.mycontent.field_taxonomyterm
+    - node.type.mycontent
+  module:
+    - text
+    - user
+id: node.mycontent.teaser
+targetEntityType: node
+bundle: mycontent
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_taxonomyterm: true
+  langcode: true
+  search_api_excerpt: true

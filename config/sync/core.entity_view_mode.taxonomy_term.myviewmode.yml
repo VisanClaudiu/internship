@@ -1,0 +1,10 @@
+uuid: 99a34e0e-b723-4b7b-acec-20f604172adf
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.myviewmode
+label: MyViewMode
+targetEntityType: taxonomy_term
+cache: true

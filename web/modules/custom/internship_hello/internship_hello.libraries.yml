@@ -1,0 +1,9 @@
+hello:
+  version: 1.x
+  css:
+    layout:
+      css/layout-hello.css: {}
+  js:
+    js/hoover.js: {}
+  dependencies:
+    - core/jquery

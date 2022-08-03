@@ -75,7 +75,7 @@ class HelloForm extends FormBase {
   public function validateForm(array &$form, FormStateInterface $form_state){
     $email = $form_state->getValue('email');
     $phone = $form_state->getValue('phone');
-    if ((strlen($phone) != 10 && !preg_match('/^[07][0-9]{9}$/', $phone))) {
+    if ((strlen($phone) !== 10 && !preg_match('/^[07][0-9]{9}$/', $phone))) {
       $form_state->setErrorByName('phone', $this->t('Invalid phone number.'));
     }
     if (!\Drupal::service('email.validator')->isValid($email)) {
@@ -85,8 +85,8 @@ class HelloForm extends FormBase {
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $postData = $form_state->getValues();
-    unset($postData['save'],$postData['form_build_id'],$postData['form_token'],
-          $postData['form_id'],$postData['op'],$postData['submit']);
+    unset($postData['save'], $postData['form_build_id'], $postData['form_token'],
+          $postData['form_id'], $postData['op'], $postData['submit']);
 
     $query=\Drupal::database();
     $query->insert('people')->fields($postData)->execute();
@@ -97,7 +97,10 @@ class HelloForm extends FormBase {
     $form_state->setRedirectUrl($url);
 
     $messenger = \Drupal::messenger();
-    $messenger->addMessage('Hello, '.$form_state->getValue('name').' '.$form_state->getValue('surname'));
+    $message=t('Hello, @name @surname', ['@name'=>$form_state->getValue('name'), '@surname'=>$form_state->getValue('surname') ]);
+    $messenger->addMessage($message);
   }
+
+
 
 }

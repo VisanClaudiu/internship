@@ -1,0 +1,29 @@
+uuid: 730d8f9f-680a-49e0-87ad-9973e005d45b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_taxonomyterm
+    - node.type.mycontent
+    - taxonomy.vocabulary.test_vocabulary
+id: node.mycontent.field_taxonomyterm
+field_name: field_taxonomyterm
+entity_type: node
+bundle: mycontent
+label: TaxonomyTerm
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      test_vocabulary: test_vocabulary
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

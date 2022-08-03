@@ -1,0 +1,41 @@
+uuid: 7675a8c3-8d31-4439-988c-04ef179fcedb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.mycontent.body
+    - field.field.node.mycontent.field_taxonomyterm
+    - node.type.mycontent
+  module:
+    - text
+    - user
+id: node.mycontent.full
+targetEntityType: node
+bundle: mycontent
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_taxonomyterm:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

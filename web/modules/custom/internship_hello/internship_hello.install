@@ -33,3 +33,38 @@
         
         return $schema;
     }
+   
+    /**
+     * test update
+     */
+    function internship_hello_update_8002(&$sandbox) {
+        $database = \Drupal::database();
+        $schema = $database->schema();
+        $cleanup_schema = [
+    'description' => 'Used to define entities that need to be deleted after import',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE
+      ],
+      'entity_id' => [
+        'description' => 'The id of the entity',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0
+      ],
+      'type' => [
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => '',
+      ]
+    ],
+    'primary key' => ['id']
+  ];
+  $schema->createTable('timport_cleanup', $cleanup_schema);
+}
+
+    

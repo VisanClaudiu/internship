@@ -1,7 +1,9 @@
+{{ attach_library('internship_hello/hello') }}
+
 <div>
-    <table>
+    <table class='styled-table'>
         <tr>
-            <th>Name</th>
+            <th>{{ 'Name'|t }}</th>
             <th>Surname</th>
             <th>Email</th>
             <th>Phone</th>
@@ -9,7 +11,7 @@
         </tr>
        {% for item in data %}
         <tr>
-        <td>{{ item.name }}</td>
+        <td data-toggle="tooltip" title="This is a tooltip">{{ item.name }}</td>
         <td>{{ item.surname }}</td>
         <td>{{ item.email }}</td>
         <td>{{ item.phone }}</td>
