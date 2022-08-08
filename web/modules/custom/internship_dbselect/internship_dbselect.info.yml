@@ -1,0 +1,5 @@
+name: internship_DBSelect
+type: module
+description: A module to get the db entries.
+package: internship
+core_version_requirement: ^8 || ^9

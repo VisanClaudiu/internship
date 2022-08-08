@@ -19,22 +19,24 @@ class HelloBlock extends BlockBase {
    */
 
   public function build() {
-    $query=\Drupal::database();
-    $result = $query -> select('people','p')
-     -> fields('p',['name','surname','email','phone','gender'])
-     ->execute()              
-     ->fetchAll();
+    // $query=\Drupal::database();
+    // $result = $query -> select('people','p')
+    //  -> fields('p',['name','surname','email','phone','gender'])
+    //  ->execute()              
+    //  ->fetchAll();
    
-    $data = [];
-    foreach($result as $row){
-      $data[]=[
-        'name' => $row -> name,
-        'surname' => $row -> surname,
-        'email' => $row -> email,
-        'phone' => $row -> phone,
-        'gender' => $row -> gender,
-      ];
-    }               
+    // $data = [];
+    // foreach($result as $row){
+    //   $data[]=[
+    //     'name' => $row -> name,
+    //     'surname' => $row -> surname,
+    //     'email' => $row -> email,
+    //     'phone' => $row -> phone,
+    //     'gender' => $row -> gender,
+    //   ];
+    // }               
+
+    $data = \Drupal::service('internship_dbselect.internshipdbselect')->dbSelect();
 
     $renderable = [
       '#theme' => 'form_block',

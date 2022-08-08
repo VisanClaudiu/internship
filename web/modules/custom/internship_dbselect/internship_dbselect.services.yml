@@ -1,0 +1,4 @@
+services:
+  internship_dbselect.internshipdbselect:
+    class: Drupal\internship_dbselect\InternshipDBSelect
+    arguments: ['@database'] 

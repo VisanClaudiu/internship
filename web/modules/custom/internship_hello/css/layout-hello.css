@@ -16,3 +16,13 @@
 .styled-table tbody tr:nth-of-type(even) {
   background-color: #f3f3f3;
 }
+
+.tableContainer {
+  height: 300px;
+  overflow: hidden;
+}
+.table {
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
