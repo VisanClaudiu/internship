@@ -26,6 +26,7 @@ module:
   help: 0
   history: 0
   image: 0
+  internship_dbselect: 0
   internship_hello: 0
   internship_search: 0
   language: 0
