@@ -4,13 +4,15 @@
     <table class='styled-table table'>
         <tr>
             <th>{{ 'Name'|t }}</th>
-            <th>Surname</th>
+            <th>{{ 'Surname'|t }}</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Gender</th>
+            <th>{{ 'Gender'|t }}</th>
+            <th></th>
         </tr>
        {% for item in data %}
         <tr>
+        <td class="hidden">{{ item.id }}</td>
         <td data-toggle="tooltip" title="This is a tooltip">{{ item.name }}</td>
         <td>{{ item.surname }}</td>
         <td>{{ item.email }}</td>
@@ -20,6 +22,7 @@
         {% else %}
         <td>Female</td>
         {% endif %}
+        <td>{{ item.Delete }}</td>
         </tr>
         {% endfor %}
 

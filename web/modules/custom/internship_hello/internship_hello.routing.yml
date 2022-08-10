@@ -5,3 +5,10 @@ internship_hello.hello:
     _title: 'Hello'
   requirements:
     _permission: 'access content' 
+
+internship_hello.delete:
+  path: '/delete/{id}'
+  defaults:
+    _controller: '\Drupal\internship_hello\Controller\DeleteController::delete'
+  requirements:
+    _permission: 'access content' 

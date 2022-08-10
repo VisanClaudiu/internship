@@ -4,9 +4,7 @@ namespace Drupal\internship_hello\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Component\Utility\EmailValidatorInterface;
 use Drupal\Core\Url;
-use Drupal\Code\Database\Database;
 
 /**
  * Returns responses for internship_search routes.
@@ -84,14 +82,8 @@ class HelloForm extends FormBase {
   }
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $postData = $form_state->getValues();
-    unset($postData['save'], $postData['form_build_id'], $postData['form_token'],
-          $postData['form_id'], $postData['op'], $postData['submit']);
+    \Drupal::service('internship_dbselect.internshipdbselect')->dbAdd($form_state);
 
-    $query=\Drupal::database();
-    $query->insert('people')->fields($postData)->execute();
-    $query -> update('people');
-    
     $path = '/succes';
     $url = Url::fromUserInput($path);
     $form_state->setRedirectUrl($url);
