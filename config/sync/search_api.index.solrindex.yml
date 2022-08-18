@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_taxonomyterm
     - search_api.server.solr
   module:
     - search_api_solr
@@ -56,11 +57,37 @@ name: 'Article search'
 description: ''
 read_only: false
 field_settings:
+  field_taxonomyterm:
+    label: TaxonomyTerm
+    datasource_id: 'entity:node'
+    property_path: field_taxonomyterm
+    type: text
+    boost: 0.6
+    dependencies:
+      config:
+        - field.storage.node.field_taxonomyterm
+  status:
+    label: Published
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    dependencies:
+      module:
+        - node
   title:
     label: Title
     datasource_id: 'entity:node'
     property_path: title
     type: text
+    dependencies:
+      module:
+        - node
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: text
+    boost: 0.8
     dependencies:
       module:
         - node
@@ -77,6 +104,7 @@ datasource_settings:
       default: false
       selected:
         - article
+        - mycontent
     languages:
       default: false
       selected:

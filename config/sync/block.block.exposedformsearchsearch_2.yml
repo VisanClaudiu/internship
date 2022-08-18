@@ -1,0 +1,23 @@
+uuid: 100373f4-7b8b-4e7d-acf5-543aabc9fec2
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search
+  module:
+    - views
+  theme:
+    - olivero
+id: exposedformsearchsearch_2
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:search-search'
+settings:
+  id: 'views_exposed_filter_block:search-search'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+visibility: {  }

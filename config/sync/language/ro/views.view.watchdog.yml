@@ -2,11 +2,22 @@ display:
   default:
     display_options:
       fields:
-        filename:
-          label: Nume
+        nothing:
+          admin_label: Pictogramă
+        type:
+          label: Tip
+        timestamp:
+          label: Data
+        name:
+          label: Utilizator
           separator: ', '
+        link:
+          label: Operaţii
       pager:
         options:
+          tags:
+            next: ››
+            previous: ‹‹
           expose:
             items_per_page_label: 'Elemente pe pagină'
             items_per_page_options_all_label: '- Toate -'
@@ -18,15 +29,9 @@ display:
           exposed_sorts_label: 'Sortare după'
           sort_asc_label: Ascendent
           sort_desc_label: Desc
-  page_2:
-    display_options:
-      pager:
-        options:
+      filters:
+        type:
           expose:
-            items_per_page_label: 'Elemente pe pagină'
-            items_per_page_options_all_label: '- Toate -'
-            offset_label: Decalaj
-      arguments:
-        fid:
-          exception:
-            title: Toate
+            label: Tip
+  page:
+    display_title: Pagina

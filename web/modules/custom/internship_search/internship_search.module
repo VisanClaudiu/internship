@@ -1,0 +1,16 @@
+<?php
+
+function internship_search_form_alter(&$form) {
+    
+    if ( $form['#id'] == 'views-exposed-form-search-search' ) {
+        $form['actions']['submit'] = [
+            '#name' => '',
+            '#type' => 'submit',
+            '#value' => 'Search',
+            '#id' => 'edit-submit-search',
+            '#attributes' => ['style'=>['display:none']]
+          ];
+        unset($form['#info']['filter-search_api_fulltext']['label']);
+    }
+    return $form;
+  }

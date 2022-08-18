@@ -1,0 +1,56 @@
+display:
+  default:
+    display_options:
+      fields:
+        subject:
+          separator: ', '
+        uid:
+          separator: ', '
+        name:
+          separator: ', '
+        entity_id:
+          separator: ', '
+        changed:
+          separator: ', '
+        operations:
+          label: Operaţii
+        name_1:
+          separator: ', '
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Elemente pe pagină'
+            items_per_page_options_all_label: '- Toate -'
+            offset_label: Decalaj
+      exposed_form:
+        options:
+          submit_button: Filtru
+          reset_button_label: Resetează
+          exposed_sorts_label: 'Sortare după'
+          sort_asc_label: Ascendent
+          sort_desc_label: Desc
+      filters:
+        langcode:
+          expose:
+            label: Limba
+  page_unapproved:
+    display_options:
+      fields:
+        subject:
+          separator: ', '
+        uid:
+          separator: ', '
+        name:
+          separator: ', '
+        entity_id:
+          separator: ', '
+        changed:
+          separator: ', '
+        operations:
+          label: Operaţii
+        name_1:
+          separator: ', '
+      filters:
+        langcode:
+          expose:
+            label: Limba

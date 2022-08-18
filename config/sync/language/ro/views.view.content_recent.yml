@@ -1,0 +1,13 @@
+display:
+  default:
+    display_options:
+      fields:
+        changed:
+          separator: ', '
+      exposed_form:
+        options:
+          submit_button: Aplicare
+          reset_button_label: Resetează
+          exposed_sorts_label: 'Sortare după'
+          sort_asc_label: Ascendent
+          sort_desc_label: Desc

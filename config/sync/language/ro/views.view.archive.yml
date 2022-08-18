@@ -1,32 +1,21 @@
 display:
   default:
     display_options:
-      fields:
-        filename:
-          label: Nume
-          separator: ', '
       pager:
         options:
+          tags:
+            next: ››
+            previous: ‹‹
           expose:
             items_per_page_label: 'Elemente pe pagină'
             items_per_page_options_all_label: '- Toate -'
             offset_label: Decalaj
       exposed_form:
         options:
-          submit_button: Filtru
+          submit_button: Aplicare
           reset_button_label: Resetează
           exposed_sorts_label: 'Sortare după'
           sort_asc_label: Ascendent
           sort_desc_label: Desc
-  page_2:
-    display_options:
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'Elemente pe pagină'
-            items_per_page_options_all_label: '- Toate -'
-            offset_label: Decalaj
-      arguments:
-        fid:
-          exception:
-            title: Toate
+  page_1:
+    display_title: Pagina

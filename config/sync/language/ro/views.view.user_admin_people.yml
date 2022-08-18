@@ -2,8 +2,9 @@ display:
   default:
     display_options:
       fields:
-        filename:
-          label: Nume
+        operations:
+          label: Operaţii
+        mail:
           separator: ', '
       pager:
         options:
@@ -18,15 +19,12 @@ display:
           exposed_sorts_label: 'Sortare după'
           sort_asc_label: Ascendent
           sort_desc_label: Desc
-  page_2:
-    display_options:
-      pager:
-        options:
+      filters:
+        roles_target_id:
           expose:
-            items_per_page_label: 'Elemente pe pagină'
-            items_per_page_options_all_label: '- Toate -'
-            offset_label: Decalaj
-      arguments:
-        fid:
-          exception:
-            title: Toate
+            label: Rol
+  page_1:
+    display_title: Pagina
+    display_options:
+      menu:
+        title: Lista

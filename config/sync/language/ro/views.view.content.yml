@@ -1,0 +1,44 @@
+label: Conţinut
+display:
+  default:
+    display_options:
+      title: Conţinut
+      fields:
+        title:
+          label: Titlu
+        type:
+          separator: ', '
+        status:
+          settings:
+            format_custom_false: Nepublicat
+            format_custom_true: Publicat
+        operations:
+          label: Operaţii
+      exposed_form:
+        options:
+          submit_button: Filtru
+          reset_button_label: Resetează
+          exposed_sorts_label: 'Sortare după'
+          sort_asc_label: Ascendent
+          sort_desc_label: Desc
+      filters:
+        title:
+          expose:
+            label: Titlu
+        status:
+          group_info:
+            group_items:
+              1:
+                title: Publicat
+              2:
+                title: Nepublicat
+        langcode:
+          expose:
+            label: Limba
+  page_1:
+    display_title: Pagina
+    display_options:
+      menu:
+        title: Conţinut
+      tab_options:
+        title: Conţinut
